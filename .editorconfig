@@ -16,6 +16,10 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 indent_size = 4
 
+[*.nix]
+indent_style = space
+indent_size = 2
+
 [{qmk,*.py}]
 charset = utf-8
 max_line_length = 200
