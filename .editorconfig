@@ -18,6 +18,10 @@ indent_size = 2
 [*.md]
 trim_trailing_whitespace = false
 
+[*.nix]
+indent_style = space
+indent_size = 2
+
 [{Makefile,*.mk}]
 indent_style = tab
 
