@@ -147,23 +147,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         case MK_LCTL: // imitate GRAVE when tapped with GUI
-            if (!MODS_GUI)
-                return true;
-            if (record->event.pressed && record->tap.count) {
+            if (MODS_GUI && record->event.pressed && record->tap.count) {
                 register_code(KC_GRAVE);
-            } else {
-                unregister_code(KC_GRAVE);
+                return false;
             }
-            return false;
+            unregister_code(KC_GRAVE);
+            return !MODS_GUI;
         case KC_ESC: // imitate GRAVE when pressed with GUI
-            if (!MODS_GUI)
-                return true;
-            if (record->event.pressed) {
+            if (MODS_GUI && record->event.pressed) {
                 register_code(KC_GRAVE);
-            } else {
-                unregister_code(KC_GRAVE);
+                return false;
             }
-            return false;
+            unregister_code(KC_GRAVE);
+            return !MODS_GUI;
         default:
             return true; //Process all other keycodes normally
     }
