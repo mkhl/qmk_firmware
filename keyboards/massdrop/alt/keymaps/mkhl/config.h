@@ -7,7 +7,7 @@
 #define PERMISSIVE_HOLD
 
 /* Shorter delay before a tap becomes a hold */
-#define TAPPING_TERM 150
+#define TAPPING_TERM 200
 
 /* Shift keys when held */
 #define AUTO_SHIFT_TIMEOUT 150
